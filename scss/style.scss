@@ -1,0 +1,163 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 10px;
+}
+
+body{
+  max-width: 98%;
+  @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+  text-transform: uppercase;
+}
+
+
+header {
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+   h2 {
+     font-size: 1.2rem;
+     margin: 65px 0 20px 0;
+     letter-spacing: 2px;
+   }
+   h1 {
+     font-size: 5.6rem;
+     font-weight: 700;
+     letter-spacing: 3px;
+     margin: 0;
+   }
+  &:after {
+    content: url(../img/plus.svg);
+    position: absolute;
+    top: -13%;
+    right: 20%;
+  }
+  &::before {
+    content: url(../img/triangle.svg);
+    position: absolute;
+    top: 55%;
+    left: 2%;
+    transform: rotate(-15deg);
+  }
+}
+
+.slider {
+  position: relative;
+  margin: 70px 0 50px 30px;
+  &__wrapper {
+    margin: 0 0 0 50px; 
+    display: flex;
+    
+  }
+  &__slide {
+    width: 360px;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 0 0 30px;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      z-index: -1;
+    }
+    &:hover {
+      cursor: pointer;
+      .slider__text {
+        background-color: rgba(27, 241, 173, 0.8);
+      }
+      h3{
+        opacity: 1;
+      }
+      span {
+        opacity: 1;
+      }
+    }
+  }
+  &__text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: #ffffff;
+    background-color: rgba(27, 241, 173, 0);
+    padding: 20px;
+    transition: all 0.25s ease-in;
+    h3, span {
+      position: absolute;
+      transition: all 0.45s ease-in;
+      opacity: 0;
+    }
+    h3 {
+      bottom: 10%;
+      width: 250px;
+      font-size:  2rem;
+      font-weight: 600;
+      letter-spacing: 0.4rem;
+      line-height: 1;
+    }
+    span {
+      bottom: 8%;
+      font-size: 1rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+  &__nav {
+    display: block;
+    height: 100%;
+  }
+}
+
+main {
+  font-size: 0;
+}
+
+.owl-prev, .owl-next{ 
+  outline: none;
+  position: absolute;
+  margin: 0 20px;
+  top: 50%;
+  bottom: 0;
+  width: 70px;
+  height: 70px;
+  border: 1.5px solid #000;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  z-index: 5;
+  transition: all 0.25s ease-in;
+  ::before {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  } 
+  &:hover {
+    border: 2.5px solid #E98457;
+    
+  }  
+}
+
+.owl-prev {
+  left: 0;
+  ::before {
+    content: url(../img/chevron-left.svg);
+  }
+}
+.owl-next {
+  right: 0;
+  ::before {
+    content: url(../img/chevron-right.svg);
+  }
+}
