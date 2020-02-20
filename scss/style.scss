@@ -54,16 +54,16 @@ header {
   position: relative;
   margin: 70px 0 50px 30px;
   &__wrapper {
-    margin: 0 0 0 50px; 
+    margin: 0 0 0 55px; 
     display: flex;
     
   }
   &__slide {
-    width: 360px;
+    width: 380px;
     height: 280px;
     overflow: hidden;
     position: relative;
-    margin: 0 0 0 30px;
+    margin: 0 0 0 20px;
     img {
       position: absolute;
       top: 50%;
@@ -127,8 +127,8 @@ main {
   margin: 0 20px;
   top: 50%;
   bottom: 0;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border: 1.5px solid #000;
   border-radius: 50%;
   transform: translate(0, -50%);
@@ -144,12 +144,15 @@ main {
     
   } 
   &:hover {
-    border: 2.5px solid #E98457;
+    border-color: #E98457;
+    width: 65px;
+  height: 65px;
     
   }  
 }
 
 .owl-prev {
+  margin-left: 40px;;
   left: 0;
   ::before {
     content: url(../img/chevron-left.svg);
